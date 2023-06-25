@@ -19,11 +19,19 @@ class _HomeViewState extends State<HomeView> {
       ),
       body: SingleChildScrollView(
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
             QuillToolbar.basic(controller: quillController),
-            QuillEditor.basic(
+            QuillEditor(
               controller: quillController,
+              focusNode: FocusNode(),
+              scrollController: ScrollController(),
+              scrollable: false,
+              padding: const EdgeInsets.all(16),
+              autoFocus: false,
               readOnly: false,
+              expands: false,
+              placeholder: 'Ketik disini',
             ),
           ],
         ),
